@@ -1,0 +1,27 @@
+<mat-list-item>
+    <mat-card class="contApp">
+        <mat-card-content class="containerApprenant">
+            {{ donnees.FIRSTNAME }} {{ donnees.LASTNAME }} 
+            
+            <mat-chip *ngIf="donnees.presenceState;else elseChipPresence" color="primary" class="py-3">Présent</mat-chip>
+            <ng-template #elseChipPresence>
+                <mat-chip color="warn" class="my-3">Absent</mat-chip>
+            </ng-template>
+            
+            
+            <button mat-stroked-button class="my-3" (click)="emitSignature()">Signer</button>
+            <mat-form-field class="my-3">
+                <mat-label>Statut élève</mat-label>
+                <mat-select (selectionChange)="changerStatutApprenant($event)">
+                  <mat-option value="0">
+                    Absent
+                  </mat-option>
+                  <mat-option value="1">
+                    Présent
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+  </mat-list-item>
+  

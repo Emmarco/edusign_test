@@ -1,0 +1,16 @@
+<p>coucou</p>
+
+<div #listeApprenant>
+    <!-- <p *ngFor="let a of arrApprenants">{{a.FIRSTNAME}}</p> -->
+    <mat-drawer-container class="example-container" >
+        <mat-drawer #drawer class="sidenav-signature" position="end" mode="side">
+            <app-signature />
+            <button mat-raised-button (click)="sendSignature()" class="my-3">Signer</button>
+        </mat-drawer>
+      
+        <app-apprenant *ngFor="let a of arrApprenants" [donnees]="a" [drawer]="drawer" (signatureEmitter)="lancerSignature($event)"/>
+      </mat-drawer-container>
+    
+    </div>
+  
+

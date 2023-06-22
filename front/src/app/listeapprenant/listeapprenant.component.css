@@ -1,0 +1,12 @@
+.sidenav-signature{
+    min-width:30vw;
+    
+}
+
+.containerApprenant {
+    display: flex;
+    justify-content: space-around;
+    min-width:50vw;
+    padding-top:30px;
+    /* min-height: 100px; */
+  }
